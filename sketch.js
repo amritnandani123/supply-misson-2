@@ -4,6 +4,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+const Render= Matter.Render;
 var line1,line2,line3;
 var line1Sprite,line2Sprite,line3Sprite;
 
@@ -27,14 +28,7 @@ function setup() {
 	helicopterSprite.scale=0.6
 	
 	
-	line1Sprite = createSprite(width / 2, 650, 200, 20);
-	line1Sprite.shapeColor = ("red");
-
-	line2Sprite = createSprite(300, 610, 20, 100);
-	line2Sprite.shapeColor = ("red");
-
-	line3Sprite = createSprite(500, 610, 20, 100);
-	line3Sprite.shapeColor = ("red");
+	
 
 	groundSprite=createSprite(width/2, height-35, width,10);
 	groundSprite.shapeColor=color(255)
@@ -62,8 +56,6 @@ function setup() {
  	World.add(world, ground);
  
 	
-	
-	 
 
 	Engine.run(engine);
 	
@@ -81,16 +73,9 @@ function draw() {
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
  
-  line1Sprite.x= line1.position.x 
-  line1Sprite.y= line1.position.y 
- 
-  line2Sprite.x= line2.position.x 
-  line2Sprite.y= line2.position.y 
- 
-  line3Sprite.x= line3.position.x 
-  line3Sprite.y= line3.position.y 
-
-
+rect(width / 2, 650, 200, 20 );
+rect(300, 610, 20, 100);
+rect(500, 610, 20, 100);
   drawSprites();
  
 }
